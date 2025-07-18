@@ -97,7 +97,19 @@ namespace Session_6
 
             return new string(inputChars);
         }
+
+        public static bool IsPrime(int n) { 
         
+            if (n<=1)
+                return false;
+            for(int i = 2; i <= Math.Sqrt(n); i++)
+            {
+                if (n % i == 0)
+                    return false;
+            }
+            return true;
+        }
+
         static void Main(string[] args)
         {
             #region question 1
@@ -132,14 +144,14 @@ namespace Session_6
              - by value: passes a copy of the reference and modifying will affect the original variable , if the the variable is reassigned the original reference will be not effected (outside the method)
             - by ref: passes the original reference, modifying will affect the original variables,if the the variable is reassigned the original reference will be  effected (outside the method)
              */
-
+            /*
             int[] ints = { 1, 2, 3, 4, 5 };
             Console.WriteLine($"before modification: {ints[0]}"); // 1
             int result= SumArray(ints);
 
             Console.WriteLine($"sum is: {result}"); //114
             Console.WriteLine($"after modification: {ints[0]}");// 100
-
+            */
             #endregion
 
             #region question 3
@@ -172,6 +184,20 @@ namespace Session_6
             #region question5
             // Create a function named "IsPrime", which receives an integer number and retuns true if it is prime,
             // or false if it is not:
+
+            Console.WriteLine("please enter the number");
+            bool isValidInput = int.TryParse(Console.ReadLine(), out int input);
+            if (isValidInput)
+            {
+                if(IsPrime(input))
+                    Console.WriteLine($"{input} is a prime");
+                else
+                    Console.WriteLine($"{input} is not a prime");
+            }
+            else
+                Console.WriteLine("please enter the right number format");
+
+
 
             #endregion
 
