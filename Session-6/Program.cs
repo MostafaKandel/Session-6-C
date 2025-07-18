@@ -68,7 +68,7 @@ namespace Session_6
             }
             else if (input == 0 || input == 1)
             {
-                result = input;
+                result = 1;
             }
             else
             {
