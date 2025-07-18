@@ -83,12 +83,12 @@ namespace Session_6
         {
             if(input is null)
             {
-                throw new NullReferenceException("please enter input value");
+                throw new ArgumentNullException("please enter input value");
                 
             }
             if(position < 0 || position > input.Length)
             {
-                throw new IndexOutOfRangeException(" the position is out of the range");
+                throw new ArgumentOutOfRangeException(" the position is out of the range");
             }
 
             char[] inputChars= input.ToCharArray();
