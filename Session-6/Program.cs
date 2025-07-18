@@ -49,7 +49,25 @@ namespace Session_6
             
         }
         
-        
+        public static void Factorial(int input, out int result)
+        {
+            result = 1;
+            if (input < 0)
+            {
+                throw new ArgumentOutOfRangeException("please enter the right number");
+            }
+            else if (input == 0 || input == 1)
+            {
+                result = input;
+            }
+            else
+            {
+                for (int i = input; i >= 2; i--)
+                {
+                    result *= i;
+                }
+            }
+        }
         static void Main(string[] args)
         {
             #region question 1
@@ -124,6 +142,16 @@ namespace Session_6
 
             #region question 7
             //7-	Create an iterative (non-recursive) function to calculate the factorial of the number specified as parameter
+            Console.WriteLine("please enter the number");
+            bool isValidInput = int.TryParse(Console.ReadLine(),out int num);
+            if (isValidInput) {
+                Factorial(num, out int result);
+                Console.WriteLine($"Factorial of {num} is: {result}");
+            }
+            else {
+                Console.WriteLine("please enter integar");
+            }
+            
             #endregion
 
         }
