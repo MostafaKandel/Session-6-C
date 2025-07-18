@@ -68,6 +68,25 @@ namespace Session_6
                 }
             }
         }
+        
+        public static string ChangeChar(string input, int position, char newChar)
+        {
+            if(input is null)
+            {
+                Console.WriteLine("please enter input value");
+                
+            }
+            if(position < 0 || position > input.Length)
+            {
+                Console.WriteLine(" the position is out of the range");
+            }
+
+            char[] inputChars= input.ToCharArray();
+            inputChars[position] = newChar;
+
+            return new string(inputChars);
+        }
+        
         static void Main(string[] args)
         {
             #region question 1
@@ -142,6 +161,7 @@ namespace Session_6
 
             #region question 7
             //7-	Create an iterative (non-recursive) function to calculate the factorial of the number specified as parameter
+            /*
             Console.WriteLine("please enter the number");
             bool isValidInput = int.TryParse(Console.ReadLine(),out int num);
             if (isValidInput) {
@@ -151,9 +171,19 @@ namespace Session_6
             else {
                 Console.WriteLine("please enter integar");
             }
-            
+            */
             #endregion
 
+            #region question 8
+            //8-	Create a function named "ChangeChar" to modify a letter in a certain position (0 based) of
+            //a string, replacing it with a different letter
+
+            string result = ChangeChar("Ahmed", 8, 'b');
+            Console.WriteLine($"the original word: Ahmed, the updated word: {result}");
+
+
+
+            #endregion
         }
     }
 }
