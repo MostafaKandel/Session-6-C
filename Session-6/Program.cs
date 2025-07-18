@@ -66,10 +66,6 @@ namespace Session_6
             {
                 throw new ArgumentOutOfRangeException("please enter the right number");
             }
-            else if (input == 0 || input == 1)
-            {
-                result = 1;
-            }
             else
             {
                 for (int i = input; i >= 2; i--)
