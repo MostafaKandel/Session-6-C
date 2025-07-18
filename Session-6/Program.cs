@@ -34,9 +34,18 @@ namespace Session_6
        
         public static void MinMaxArray(ref int[] arr, out int min, out int max)
         {
-            Array.Sort(arr);
-            min = arr[0];
-            max = arr[arr.Length-1];
+            if (arr is not null)
+            {
+                Array.Sort(arr);
+                min = arr[0];
+                max = arr[arr.Length - 1];
+            }
+            else
+            {
+                min = 0;
+                max = 0;
+                
+            }
             
         }
         
@@ -106,10 +115,17 @@ namespace Session_6
             //Create a function named MinMaxArray, to return the minimum and maximum values stored in an array,
             //using reference parameters
 
+            /*
             int[] numbers = { 4, 8, 1, 6, 9, 2 };
             MinMaxArray(ref numbers, out int minValue, out int maxValue);
             Console.WriteLine($"min value: {minValue}, max alue: {maxValue}");
+            */
             #endregion
+
+            #region question 7
+            //7-	Create an iterative (non-recursive) function to calculate the factorial of the number specified as parameter
+            #endregion
+
         }
     }
 }
