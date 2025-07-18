@@ -14,6 +14,17 @@ namespace Session_6
             x = 10;
         }
 
+        public static int SumArray(int[] arr)
+        {
+            int sum = 0;
+            arr[0] = 100;
+            for (int i = 0; i < arr.Length; i++) { 
+            sum += arr[i];
+            }
+            return sum;
+
+        }
+
         public static void SumAndSubValues(int num1, int num2, out int sum, out int sub) {
                 sum= num1 + num2;
                 sub= num1 - num2;
@@ -115,6 +126,22 @@ namespace Session_6
 
             #endregion
 
+            #region question 2
+            // 2-	Explain the difference between passing (Reference type parameters) by value and by reference then write a suitable c# example.
+            /*
+             - by value: passes a copy of the reference and modifying will affect the original variable , if the the variable is reassigned the original reference will be not effected (outside the method)
+            - by ref: passes the original reference, modifying will affect the original variables,if the the variable is reassigned the original reference will be  effected (outside the method)
+             */
+
+            int[] ints = { 1, 2, 3, 4, 5 };
+            Console.WriteLine($"before modification: {ints[0]}"); // 1
+            int result= SumArray(ints);
+
+            Console.WriteLine($"sum is: {result}"); //114
+            Console.WriteLine($"after modification: {ints[0]}");// 100
+
+            #endregion
+
             #region question 3
             // 3-	Write a c# Function that accept 4 parameters from user and return result of summation
             // and subtracting of two numbers
@@ -177,10 +204,10 @@ namespace Session_6
             #region question 8
             //8-	Create a function named "ChangeChar" to modify a letter in a certain position (0 based) of
             //a string, replacing it with a different letter
-
+            /*
             string result = ChangeChar("Ahmed", 8, 'b');
             Console.WriteLine($"the original word: Ahmed, the updated word: {result}");
-
+            */
 
 
             #endregion
