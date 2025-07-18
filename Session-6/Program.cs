@@ -1,4 +1,7 @@
-﻿namespace Session_6
+﻿using System.Xml.Linq;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+
+namespace Session_6
 {
     internal class Program
     {
@@ -16,7 +19,7 @@
                 sub= num1 - num2;
         }
         
-        public static int CalculateSumOfIndividualDigitsOfNumber(int num1)
+        public static int CalculateSumOfIndividualDigitsOfNumber( int num1)
         {
             int sum= 0;
             string convertedNumber= num1.ToString();
@@ -28,6 +31,16 @@
 
             return sum;
         }
+       
+        public static void MinMaxArray(ref int[] arr, out int min, out int max)
+        {
+            Array.Sort(arr);
+            min = arr[0];
+            max = arr[arr.Length-1];
+            
+        }
+        
+        
         static void Main(string[] args)
         {
             #region question 1
@@ -83,7 +96,20 @@
             */
             #endregion
 
+            #region question5
+            // Create a function named "IsPrime", which receives an integer number and retuns true if it is prime,
+            // or false if it is not:
 
+            #endregion
+
+            #region question 6
+            //Create a function named MinMaxArray, to return the minimum and maximum values stored in an array,
+            //using reference parameters
+
+            int[] numbers = { 4, 8, 1, 6, 9, 2 };
+            MinMaxArray(ref numbers, out int minValue, out int maxValue);
+            Console.WriteLine($"min value: {minValue}, max alue: {maxValue}");
+            #endregion
         }
     }
 }
