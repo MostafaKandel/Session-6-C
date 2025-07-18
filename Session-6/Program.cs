@@ -1,5 +1,4 @@
-﻿using System.Xml.Linq;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+﻿
 
 namespace Session_6
 {
@@ -84,12 +83,12 @@ namespace Session_6
         {
             if(input is null)
             {
-                Console.WriteLine("please enter input value");
+                throw new NullReferenceException("please enter input value");
                 
             }
             if(position < 0 || position > input.Length)
             {
-                Console.WriteLine(" the position is out of the range");
+                throw new IndexOutOfRangeException(" the position is out of the range");
             }
 
             char[] inputChars= input.ToCharArray();
